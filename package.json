@@ -1,0 +1,61 @@
+{
+  "name": "belayus2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "dns": "^0.2.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-plugin-jest": "^21.15.2",
+    "foundation-sites": "^6.4.4-rc1",
+    "history": "^4.7.2",
+    "i18n-react": "^0.6.4",
+    "node-sass-chokidar": "^1.3.0",
+    "npm": "^6.1.0",
+    "npm-run-all": "^4.1.3",
+    "preact": "^8.2.9",
+    "preact-compat": "^3.18.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.87.0",
+    "source-map-explorer": "^1.5.0",
+    "winston": "^2.4.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.4",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-security": "^1.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react-scripts": "2.0.0-next.3e165448"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules/foundation-sites/scss/ src/ -o src/ --watch --recursive",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "NODE_PATH=src BROWSER=none react-scripts start",
+    "build-js": "NODE_PATH=src node build.js",
+    "test": "NODE_PATH=src react-scripts test --env=jsdom"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  }
+}
